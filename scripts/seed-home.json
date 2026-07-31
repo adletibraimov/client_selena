@@ -1,0 +1,137 @@
+{
+  "_id": "homePage",
+  "_type": "page",
+  "title": "Selena",
+  "slug": {
+    "_type": "slug",
+    "current": "home"
+  },
+  "headerConfig": {
+    "brandName": "Selena",
+    "navItems": [
+      { "_key": "nav-1", "label": "Ana Sayfa", "href": "#ana-sayfa" },
+      { "_key": "nav-2", "label": "Hakkımda", "href": "#hakkimda" },
+      { "_key": "nav-3", "label": "Eğitimler", "href": "#egitimler" },
+      {
+        "_key": "nav-4",
+        "label": "Bire Bir Danışmanlık",
+        "href": "#danismanlik"
+      },
+      { "_key": "nav-5", "label": "İletişim", "href": "#iletisim" }
+    ]
+  },
+  "pageSections": [
+    {
+      "_key": "hero",
+      "_type": "heroSection",
+      "headline": "Zarafetle dönüşen bir yolculuk",
+      "subheadline": "Kişisel stil, eğitim ve bire bir danışmanlıkla kendinizi yeniden keşfedin.",
+      "ctaButtons": [
+        {
+          "_key": "cta-1",
+          "label": "Eğitimleri Keşfet",
+          "href": "#egitimler",
+          "variant": "primary"
+        },
+        {
+          "_key": "cta-2",
+          "label": "İletişime Geç",
+          "href": "#iletisim",
+          "variant": "secondary"
+        }
+      ],
+      "carouselEnabled": false
+    },
+    {
+      "_key": "about",
+      "_type": "aboutSection",
+      "eyebrow": "Hakkımda",
+      "title": "Stil, özgünlük ve bilinçli seçimler",
+      "bio": "Yıllardır bireysel stil danışmanlığı ve eğitimler yoluyla kadınların kendilerini daha net ifade etmelerine yardımcı oluyorum. Her süreç; kişiliğe, yaşam ritmine ve hedeflere özel olarak tasarlanır.",
+      "stats": [
+        { "_key": "s1", "value": "10+", "label": "Yıllık Deneyim" },
+        { "_key": "s2", "value": "500+", "label": "Danışan" },
+        { "_key": "s3", "value": "40+", "label": "Eğitim Programı" }
+      ]
+    },
+    {
+      "_key": "trainings",
+      "_type": "trainingsSection",
+      "eyebrow": "Eğitimler",
+      "title": "Derinlikli ve uygulanabilir programlar",
+      "description": "Kapsamlı eğitimlerle stil bilgisini günlük hayata taşıyın; kendinize güveni kalıcı hale getirin.",
+      "trainings": [
+        {
+          "_key": "t1",
+          "title": "Kişisel Stil Temelleri",
+          "description": "Vücut tipi, renk analizi ve gardırop mimarisi üzerine temelli bir başlangıç.",
+          "duration": "4 Hafta"
+        },
+        {
+          "_key": "t2",
+          "title": "Kapsül Gardırop Atölyesi",
+          "description": "Az parçayla çok kombin; sürdürülebilir ve zarif bir gardırop kurma pratiği.",
+          "duration": "2 Gün"
+        },
+        {
+          "_key": "t3",
+          "title": "Profesyonel İmaj",
+          "description": "İş ve sosyal hayatta güçlü bir duruş için imaj stratejileri.",
+          "duration": "3 Hafta"
+        }
+      ]
+    },
+    {
+      "_key": "consulting",
+      "_type": "consultingSection",
+      "eyebrow": "Bire Bir Danışmanlık",
+      "title": "Size özel, bire bir rehberlik",
+      "description": "Hedeflerinize odaklanan özel seanslarla stil dilinizi netleştirin. Gardırop düzenleme, alışveriş eşliği ve uzun vadeli imaj planlaması.",
+      "features": [
+        {
+          "_key": "f1",
+          "title": "Kişisel Analiz",
+          "description": "Renk, silüet ve yaşam tarzı değerlendirmesi."
+        },
+        {
+          "_key": "f2",
+          "title": "Gardırop Stratejisi",
+          "description": "Mevcut parçalarla güçlü kombinler ve eksik analizi."
+        },
+        {
+          "_key": "f3",
+          "title": "Alışveriş Rehberliği",
+          "description": "Bilinçli, zamansız ve size yakışan seçimler."
+        }
+      ],
+      "ctaLabel": "Randevu Al",
+      "ctaHref": "#iletisim"
+    },
+    {
+      "_key": "contact",
+      "_type": "contactSection",
+      "eyebrow": "İletişim",
+      "title": "Birlikte başlayalım",
+      "description": "Eğitimler veya bire bir danışmanlık hakkında sorularınız için formu doldurun.",
+      "formTitle": "Mesaj Gönderin",
+      "formSubtext": "En kısa sürede size dönüş yapacağız.",
+      "successMessage": "Mesajınız alındı. En kısa sürede dönüş yapacağız."
+    }
+  ],
+  "footerConfig": {
+    "brandName": "Selena",
+    "tagline": "Stil danışmanlığı ve eğitimlerle özgün bir imaj.",
+    "email": "merhaba@selena.com",
+    "phone": "+90 555 123 45 67",
+    "whatsappNumber": "905551234567",
+    "address": "İstanbul",
+    "socialLinks": [
+      {
+        "_key": "ig",
+        "label": "Instagram",
+        "href": "https://instagram.com"
+      }
+    ],
+    "copyright": "© Selena. Tüm hakları saklıdır."
+  }
+}
