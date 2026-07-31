@@ -37,6 +37,7 @@ export type FooterConfig = {
   brandName?: string | null;
   tagline?: string | null;
   email?: string | null;
+  formRecipientEmail?: string | null;
   phone?: string | null;
   whatsappNumber?: string | null;
   address?: string | null;

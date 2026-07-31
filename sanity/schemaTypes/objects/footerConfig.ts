@@ -20,14 +20,25 @@ export const footerConfig = defineType({
     }),
     defineField({
       name: "email",
-      title: "Email",
+      title: "Email (görünen)",
       type: "string",
+      description: "Footer’da görünen e-posta adresi.",
+    }),
+    defineField({
+      name: "formRecipientEmail",
+      title: "Form alıcı e-postası",
+      type: "string",
+      description:
+        "İletişim formundan gelen mesajların gideceği adres (CONTACT TO).",
+      validation: (rule) =>
+        rule.email().warning("Geçerli bir e-posta girin."),
     }),
     defineField({
       name: "phone",
       title: "Phone",
       type: "string",
     }),
+
     defineField({
       name: "whatsappNumber",
       title: "WhatsApp Number",

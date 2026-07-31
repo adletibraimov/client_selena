@@ -13,8 +13,4 @@ export const structure: StructureResolver = (S) =>
             .documentId("homePage")
             .title("Ana Sayfa"),
         ),
-      S.divider(),
-      S.listItem()
-        .title("Tüm Sayfalar")
-        .child(S.documentTypeList("page").title("Sayfalar")),
     ]);

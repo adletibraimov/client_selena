@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
+import { client } from "@/sanity/lib/client";
+
 type ContactPayload = {
   name?: string;
   email?: string;
@@ -10,6 +12,28 @@ type ContactPayload = {
 
 function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+async function getFormRecipientEmail() {
+  try {
+    const data = await client.fetch<{
+      formRecipientEmail?: string | null;
+      email?: string | null;
+    } | null>(
+      `*[_type == "page" && (_id == "homePage" || slug.current == "home")][0]{
+        "formRecipientEmail": footerConfig.formRecipientEmail,
+        "email": footerConfig.email
+      }`,
+    );
+
+    const fromCms =
+      data?.formRecipientEmail?.trim() || data?.email?.trim() || "";
+    if (fromCms && isValidEmail(fromCms)) return fromCms;
+  } catch (error) {
+    console.error("[contact] Failed to load recipient from CMS", error);
+  }
+
+  return process.env.CONTACT_TO_EMAIL?.trim() || "";
 }
 
 export async function POST(request: Request) {
@@ -42,7 +66,7 @@ export async function POST(request: Request) {
     }
 
     const apiKey = process.env.RESEND_API_KEY;
-    const toEmail = process.env.CONTACT_TO_EMAIL;
+    const toEmail = await getFormRecipientEmail();
     const fromEmail =
       process.env.CONTACT_FROM_EMAIL || "Selena <onboarding@resend.dev>";
 
@@ -52,6 +76,8 @@ export async function POST(request: Request) {
         email,
         phone,
         message,
+        hasApiKey: Boolean(apiKey),
+        hasToEmail: Boolean(toEmail),
       });
       return NextResponse.json({
         ok: true,

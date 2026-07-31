@@ -107,6 +107,7 @@ export const HOME_PAGE_QUERY = defineQuery(`
       brandName,
       tagline,
       email,
+      formRecipientEmail,
       phone,
       whatsappNumber,
       address,
