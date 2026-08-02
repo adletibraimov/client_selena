@@ -67,6 +67,8 @@ export function ConsultingSection({ data }: Props) {
             <SanityImage
               value={data.image}
               fill
+              width={1200}
+              height={1500}
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 45vw"
               alt={data.title || "Danışmanlık"}

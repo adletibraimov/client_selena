@@ -30,17 +30,19 @@ export function SanityImage({
 }: Props) {
   if (!value?.asset) return null;
 
-  const resolvedHeight = height ?? Math.round(width * 1.25);
   const resolvedAlt = alt || value.alt || "";
-  const src = urlFor(value)
-    .width(width)
-    .height(resolvedHeight)
-    .fit("crop")
-    .auto("format")
-    .url();
   const blurDataURL = value.asset.metadata?.lqip || undefined;
+  const aspectRatio = value.asset.metadata?.dimensions?.aspectRatio;
 
   if (fill) {
+    // With `fill`, CSS sizes the frame. Only crop on the CDN when the
+    // caller passes an explicit height (so hotspot can align to that ratio).
+    // Otherwise keep the source aspect and let object-fit handle framing.
+    const builder = urlFor(value).width(width).auto("format");
+    const src = height
+      ? builder.height(height).fit("crop").url()
+      : builder.url();
+
     return (
       <Image
         src={src}
@@ -54,6 +56,19 @@ export function SanityImage({
       />
     );
   }
+
+  const resolvedHeight =
+    height ??
+    (aspectRatio
+      ? Math.round(width / aspectRatio)
+      : Math.round(width * 0.75));
+
+  const src = urlFor(value)
+    .width(width)
+    .height(resolvedHeight)
+    .fit("crop")
+    .auto("format")
+    .url();
 
   return (
     <Image

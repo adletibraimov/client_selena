@@ -29,6 +29,8 @@ export function TrainingsSection({ data }: Props) {
                     <SanityImage
                       value={training.image}
                       fill
+                      width={1200}
+                      height={900}
                       className="object-cover transition duration-700 group-hover:scale-[1.03]"
                       sizes="(max-width: 768px) 100vw, 30vw"
                       alt={training.title}
