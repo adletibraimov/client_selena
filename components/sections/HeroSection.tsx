@@ -49,9 +49,9 @@ export function HeroSection({ data, brandName }: Props) {
 
       <div className="relative mx-auto flex min-h-[100svh] max-w-7xl items-end px-5 pb-28 pt-36 md:items-center md:px-8 md:pb-24 md:pt-28">
         <div className="animate-fade-up max-w-xl">
-          <p className="mb-5 font-serif text-5xl tracking-[-0.04em] text-cocoa md:text-6xl lg:text-7xl">
+          {/* <p className="mb-5 font-serif text-5xl tracking-[-0.04em] text-cocoa md:text-6xl lg:text-7xl">
             {brand}
-          </p>
+          </p> */}
           <h1 className="max-w-xl font-serif text-4xl leading-[1.08] tracking-[-0.03em] text-cocoa md:text-5xl lg:text-[3.5rem]">
             {data.headline}
           </h1>
