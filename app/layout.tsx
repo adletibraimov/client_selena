@@ -16,12 +16,15 @@ const body = Manrope({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.ailedanismaniselena.com",
+  ),
   title: {
-    default: "Selena | Stil Danışmanlığı & Eğitimler",
+    default: "Selena | Aile Danışmanı",
     template: "%s | Selena",
   },
   description:
-    "Stil danışmanlığı, eğitimler ve bire bir rehberlik ile özgün bir imaj yolculuğu.",
+    "Aile danışmanlığı, eğitimler ve bire bir rehberlik ile kalıcı değişim yolculuğu.",
 };
 
 export default function RootLayout({
